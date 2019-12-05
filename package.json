@@ -124,10 +124,12 @@
     "css-loader": "^3.1.0",
     "del": "^5.0.0",
     "devtron": "^1.4.0",
+    "dotenv": "^8.2.0",
     "electron": "^6.0.0",
     "electron-builder": "^22.0.0",
     "electron-debug": "^3.0.1",
     "electron-devtools-installer": "^2.2.4",
+    "electron-notarize": "^0.2.1",
     "eslint": "^6.1.0",
     "eslint-config-standard": "^14.0.0",
     "eslint-friendly-formatter": "^4.0.1",
@@ -178,6 +180,7 @@
     "productName": "Ark Desktop Wallet",
     "appId": "io.ark.desktop-wallet",
     "artifactName": "${name}-${os}-${arch}-${version}.${ext}",
+    "afterSign": "./scripts/notarize.js",
     "publish": {
       "provider": "github",
       "vPrefixedTagName": false
@@ -201,7 +204,14 @@
     "mac": {
       "category": "public.app-category.finance",
       "icon": "build/icons/icon.icns",
-      "hardenedRuntime": false
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "./build/entitlements.mac.inherit.plist",
+      "entitlementsInherit": "./build/entitlements.mac.inherit.plist",
+      "target": [
+        "dmg",
+        "zip"
+      ]
     },
     "win": {
       "target": "nsis",
@@ -231,17 +241,13 @@
       ]
     },
     "dmg": {
-      "icon": "build/icons/icon.icns"
+      "icon": "build/icons/icon.icns",
+      "sign": false
     },
     "nsis": {
       "perMachine": true,
       "oneClick": false,
       "allowToChangeInstallationDirectory": true
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
     }
   }
 }
