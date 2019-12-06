@@ -5,7 +5,7 @@ on:
     branches:
       - "master"
       - "develop"
-      - "nota"
+      - "noto"
   pull_request:
     types: [ready_for_review, synchronize, opened]
 
