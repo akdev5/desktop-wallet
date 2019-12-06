@@ -23,6 +23,7 @@ __tests__/*/.coverage
 
 plugins/*
 
+# Apple Notarisation
 private_keys
-
+*.p8
 .env
