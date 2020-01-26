@@ -35,12 +35,15 @@ module.exports = {
   setupFiles: [
     '<rootDir>/__tests__/unit/__utils__/setup.js'
   ],
+  setupFilesAfterEnv: [
+    'jest-extended',
+    '<rootDir>/__tests__/unit/__utils__/setup-env.js'
+  ],
   snapshotSerializers: ['jest-serializer-vue'],
   coverageReporters: ['json', 'lcov', 'text', 'clover', 'html'],
   coverageDirectory: '<rootDir>/__tests__/unit/.coverage',
   collectCoverageFrom: [
     'src/renderer/**/*.{js,vue}'
   ],
-  setupFilesAfterEnv: ['jest-extended'],
   watchman: false
 }
