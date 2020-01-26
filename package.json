@@ -73,8 +73,8 @@
     "color": "^3.1.0",
     "cycled": "^1.0.0",
     "dayjs": "^1.8.11",
-    "decompress": "^4.2.0",
     "deepmerge": "^4.1.1",
+    "decompress": "^4.2.0",
     "du": "^1.0.0",
     "electron-dl": "^2.0.0",
     "electron-log": "^3.0.7",
@@ -114,7 +114,6 @@
     "vuelidate": "^0.7.4",
     "vuex": "^3.1.1",
     "vuex-persist": "^2.0.1",
-    "weak-napi": "^1.0.3",
     "wif": "^2.0.6"
   },
   "devDependencies": {
