@@ -42,12 +42,12 @@
     "postinstall": "electron-builder install-app-deps",
     "preversion": "cross-env ./scripts/version-artifacts.sh",
     "test": "npm run test:unit && npm run test:e2e:full",
-    "test:e2e": "node --expose-gc --max-old-space-size=4096 ./node_modules/.bin/jest --logHeapUsage --config __tests__/e2e.jest.conf.js",
+    "test:e2e": "node --expose-gc --max-old-space-size=4096 ./node_modules/.bin/jest --logHeapUsage --maxWorkers=50% --config __tests__/e2e.jest.conf.js",
     "test:e2e:full": "npm run pack && npm run test:e2e",
-    "test:unit": "node --expose-gc --max-old-space-size=4096 ./node_modules/.bin/jest --logHeapUsage --config __tests__/unit.jest.conf.js",
-    "test:unit:coverage": "node --expose-gc --max-old-space-size=4096 ./node_modules/.bin/jest --logHeapUsage --config __tests__/unit.jest.conf.js --coverage",
-    "test:unit:watch": "node --expose-gc --max-old-space-size=4096 ./node_modules/.bin/jest --logHeapUsage --config __tests__/unit.jest.conf.js --watch",
-    "test:unit:band": "node --expose-gc --max-old-space-size=4096 ./node_modules/.bin/jest --logHeapUsage --config __tests__/unit.jest.conf.js --runInBand"
+    "test:unit": "node --expose-gc --max-old-space-size=4096 ./node_modules/.bin/jest --logHeapUsage --maxWorkers=50% --config __tests__/unit.jest.conf.js",
+    "test:unit:coverage": "node --expose-gc --max-old-space-size=4096 ./node_modules/.bin/jest --logHeapUsage --maxWorkers=50% --config __tests__/unit.jest.conf.js --coverage",
+    "test:unit:watch": "node --expose-gc --max-old-space-size=4096 ./node_modules/.bin/jest --logHeapUsage --maxWorkers=50% --config __tests__/unit.jest.conf.js --watch",
+    "test:unit:band": "node --expose-gc --max-old-space-size=4096 ./node_modules/.bin/jest --logHeapUsage --maxWorkers=50% --config __tests__/unit.jest.conf.js --runInBand"
   },
   "dependencies": {
     "@arkecosystem/client": "^1.0.5",
